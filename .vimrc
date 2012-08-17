@@ -76,6 +76,7 @@ set nocompatible
 set bs=2
 " BUGBUG: supertab can't work "set paste
 set nobackup
+syntax on
 " *----* "
 
 " *---- key Tabs defination ----* "
