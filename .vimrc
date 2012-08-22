@@ -123,3 +123,7 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1 
 " *----* "
+"
+" *---- Enhanced Python Syntax ----*
+let python_highlight_all = 1
+" *----* "
