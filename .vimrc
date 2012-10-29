@@ -48,6 +48,8 @@ abbr csadd cs add cscope.out
 " *---- plugin: TagList ----* "
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
+" for mac os and change the ctags to ctag
+" let Tlist_Ctags_Cmd="/usr/bin/ctag"
 " *----* "
 
 " *---- plugin: Win Manager with NERD Tree ----* "
@@ -81,9 +83,9 @@ syntax on
 
 " *---- key Tabs defination ----* "
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 " *----* "
 
 " *---- Key Mapping ----* "
@@ -106,7 +108,7 @@ map <c-p> :cp<CR>
 
 " *---- Interface ----* "
 colorscheme darkblue
-set guifont=Monospace
+"set guifont=Monospace
 set number
 " *----* "
 
@@ -127,3 +129,5 @@ let g:miniBufExplModSelTarget = 1
 " *---- Enhanced Python Syntax ----*
 let python_highlight_all = 1
 " *----* "
+"
+let g:pydiction_location = '~/.vim/bundle/pydiction/after/ftplugin/complete-dict'
