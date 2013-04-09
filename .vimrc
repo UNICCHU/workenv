@@ -107,7 +107,6 @@ map <c-p> :cp<CR>
 " *----* "
 
 " *---- Interface ----* "
-colorscheme darkblue
 "set guifont=Monospace
 set number
 " *----* "
@@ -131,3 +130,25 @@ let python_highlight_all = 1
 " *----* "
 "
 let g:pydiction_location = '~/.vim/bundle/pydiction/after/ftplugin/complete-dict'
+hi clear Normal
+
+" Remove all existing highlighting and set the defaults.
+hi clear
+"
+" " Load the syntax highlighting defaults, if it's enabled.
+if exists("syntax_on")
+   syntax reset
+endif
+"
+let colors_name = "gundam"
+"
+"   " vim: sw=2
+"   " set color of pop-up menu"
+"   " 0:
+"   " 2:green, 3:yello, 4:blue, 5:purple,
+"   " 6:green-blue, 7: white, 8: black, 9: red
+"highlight   clear
+highlight   Pmenu         ctermfg=8 ctermbg=4
+highlight   PmenuSel      ctermfg=8 ctermbg=6
+highlight   PmenuSbar     ctermfg=8 ctermbg=7
+highlight   PmenuThumb    ctermfg=8 ctermbg=7
