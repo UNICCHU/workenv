@@ -97,7 +97,8 @@ map <M-Right> :tabnext<CR>
 map <M-Left> :tabprev<CR>
 " Create cscope and tags
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-map <C-F12> :!cscope -Rb <CR> :csadd <CR>
+map <C-F12> :!cscope -Rb <CR> :csadd <CR> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
 " Save Usage
 map <C-S> :w <CR>
 imap <C-S> <ESC> :w <CR>
@@ -128,6 +129,7 @@ let g:miniBufExplModSelTarget = 1
 " *---- Enhanced Python Syntax ----*
 let python_highlight_all = 1
 " *----* "
+set term=xterm
 "
 let g:pydiction_location = '~/.vim/bundle/pydiction/after/ftplugin/complete-dict'
 hi clear Normal
@@ -149,6 +151,6 @@ let colors_name = "gundam"
 "   " 6:green-blue, 7: white, 8: black, 9: red
 "highlight   clear
 highlight   Pmenu         ctermfg=8 ctermbg=4
-highlight   PmenuSel      ctermfg=8 ctermbg=6
-highlight   PmenuSbar     ctermfg=8 ctermbg=7
+highlight   PmenuSel      ctermfg=0 ctermbg=6
+highlight   PmenuSbar     ctermfg=0 ctermbg=7
 highlight   PmenuThumb    ctermfg=8 ctermbg=7
