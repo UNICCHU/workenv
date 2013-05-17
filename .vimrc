@@ -8,14 +8,13 @@
 " ****************************************
 "
 "  **** key Mappings **** 
-" F1     :Taglist+NERD Tree
-" F3     :BufExplorer
+" F1     :vifm
+" F3     :
 " F4     :TlistToggle
 " F5     :NERDTreeToggle
-" F7     :miniBufExplorer
+" F7     :
 " F12    :Create Tags
 "
-" wm/wmc :Open/Close WinManger(Taglist+NERDTree)
 " csa    : add cscope.out to database
 " <Alt-left, right> : Tab left/Right
 " <c-F12>           : Create cscope.out files.
@@ -52,23 +51,6 @@ let Tlist_Exit_OnlyWindow=1
 " let Tlist_Ctags_Cmd="/usr/bin/ctag"
 " *----* "
 
-" *---- plugin: Win Manager with NERD Tree ----* "
-let g:NERDTree_title='[NERD Tree]'
-let g:winManagerWindowLayout='NERDTree|TagList'
-
-function! NERDTree_Start()
-    exec 'NERDTree'
-endfunction
-
-function! NERDTree_IsValid()
-    return 1
-endfunction
-
-nmap wm :WManager<cr>:q<cr>
-nmap wmc :WMClose<cr>
-nmap <F1> :WManager<cr>:q<cr>
-" *----* "
-
 " *---- plugin: snipMate ----* "
 filetype plugin on
 " *----* "
@@ -91,10 +73,10 @@ set softtabstop=4
 " *---- Key Mapping ----* "
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :TlistToggle<CR>
-nnoremap <silent> <F3> :BufExplorer<CR>
+nnoremap <silent> <F1> :EditVifm<CR>
 " Tab Usage
-map <M-Right> :tabnext<CR>
-map <M-Left> :tabprev<CR>
+map <M-j> :tabnext<CR>
+map <M-k> :tabprev<CR>
 " Create cscope and tags
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 map <C-F12> :!cscope -Rb <CR> :csadd <CR> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -112,20 +94,6 @@ map <c-p> :cp<CR>
 set number
 " *----* "
 
-" *---- FufFinder -----* "
-map fff :FufFile <CR>
-map ffd :FufDir <CR>
-map fft :FufTag <CR>
-" *----* "
-
-" *---- MiniBufExplorer -----* "
-map <F7> <ESC>:TMiniBufExplorer<CR>
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1 
-" *----* "
-"
 " *---- Enhanced Python Syntax ----*
 let python_highlight_all = 1
 " *----* "
@@ -134,6 +102,8 @@ set term=xterm
 let g:pydiction_location = '~/.vim/bundle/pydiction/after/ftplugin/complete-dict'
 hi clear Normal
 
+
+" *---- gundam pop menu color----*
 " Remove all existing highlighting and set the defaults.
 hi clear
 "
@@ -141,10 +111,8 @@ hi clear
 if exists("syntax_on")
    syntax reset
 endif
-"
+
 let colors_name = "gundam"
-"
-"   " vim: sw=2
 "   " set color of pop-up menu"
 "   " 0:
 "   " 2:green, 3:yello, 4:blue, 5:purple,
@@ -154,3 +122,4 @@ highlight   Pmenu         ctermfg=8 ctermbg=4
 highlight   PmenuSel      ctermfg=0 ctermbg=6
 highlight   PmenuSbar     ctermfg=0 ctermbg=7
 highlight   PmenuThumb    ctermfg=8 ctermbg=7
+" *----*
