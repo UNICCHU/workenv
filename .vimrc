@@ -9,7 +9,8 @@
 "
 "  **** key Mappings **** 
 " F1     :vifm
-" F3     :
+" F2     :
+" F3     :TagbarToggle
 " F4     :TlistToggle
 " F5     :NERDTreeToggle
 " F7     :
@@ -73,6 +74,7 @@ set softtabstop=4
 " *---- Key Mapping ----* "
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :TlistToggle<CR>
+nnoremap <silent> <F3> :TagbarToggle<CR>
 nnoremap <silent> <F1> :EditVifm<CR>
 " Tab Usage
 map <M-j> :tabnext<CR>
