@@ -8,8 +8,8 @@
 " ****************************************
 "
 "  **** key Mappings **** 
-" F1     :vifm
-" F2     :
+" F1     :
+" F2     :vifm
 " F3     :TagbarToggle
 " F4     :TlistToggle
 " F5     :NERDTreeToggle
@@ -34,9 +34,11 @@ filetype plugin indent on
 " *----* "
 
 " *---- plugin: NERD Tree ----* "
-let NERDTreeChDirMode=2 
+let NERDTreeChDirMode=1
 let NERDTreeMouseMode=2
-let NERDTreeWinPos="right"
+let NERDTreeQuitOnOpen=1
+let NERDTreeHighlightCursorline=1
+" let NERDTreeWinPos="right"
 " *----* "
   
 " *---- plugin: Cscope ----* "
@@ -75,10 +77,10 @@ set softtabstop=4
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :TlistToggle<CR>
 nnoremap <silent> <F3> :TagbarToggle<CR>
-nnoremap <silent> <F1> :EditVifm<CR>
+nnoremap <silent> <F2> :EditVifm<CR>
 " Tab Usage
-map <M-j> :tabnext<CR>
-map <M-k> :tabprev<CR>
+map <C-j> :tabnext<CR>
+map <C-k> :tabprev<CR>
 " Create cscope and tags
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 map <C-F12> :!cscope -Rb <CR> :csadd <CR> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
