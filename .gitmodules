@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/pydiction"]
 	path = .vim/bundle/pydiction
 	url = https://github.com/vim-scripts/Pydiction.git
+[submodule ".vim/bundle/EasyGrep"]
+	path = .vim/bundle/EasyGrep
+	url = https://github.com/vim-scripts/EasyGrep.git
