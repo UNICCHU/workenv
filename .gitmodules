@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/snipMate"]
 	path = .vim/bundle/snipMate
 	url = https://github.com/vim-scripts/snipMate.git
+[submodule ".vim/bundle/pydiction"]
+	path = .vim/bundle/pydiction
+	url = https://github.com/vim-scripts/Pydiction.git

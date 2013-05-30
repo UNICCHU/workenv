@@ -102,7 +102,7 @@ let python_highlight_all = 1
 " *----* "
 set term=xterm
 "
-let g:pydiction_location = '~/.vim/bundle/pydiction/after/ftplugin/complete-dict'
+let g:pydiction_location = '.vim/bundle/pydiction/complete-dict'
 hi clear Normal
 
 
