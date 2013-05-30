@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/L9"]
 	path = .vim/bundle/L9
 	url = https://github.com/vim-scripts/L9.git
+[submodule ".vim/bundle/snipMate"]
+	path = .vim/bundle/snipMate
+	url = https://github.com/vim-scripts/snipMate.git
