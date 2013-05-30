@@ -8,22 +8,21 @@
 " ****************************************
 "
 "  **** key Mappings **** 
-" F1     :
-" F2     :vifm
-" F3     :TagbarToggle
-" F4     :TlistToggle
-" F5     :NERDTreeToggle
+" F2     : vifm
+" F3     : TagbarToggle
+" F4     : TlistToggle
+" F5     : NERDTreeToggle
 " F7     :
-" F12    :Create Tags
+" F12    : Create Tags
 "
 " csa    : add cscope.out to database
-" <Alt-left, right> : Tab left/Right
 " <c-F12>           : Create cscope.out files.
 " <c-x> <x-o>       : omni complete function
 " tab               : complete function
 " <c-s>             : save files
 " <c-leasder>, s/d  : cscope find symbol/defination
 " <c-n>, <c-p>      : quickfix window up/down
+" <c-j>, <c-k>      : Tab left/Righ
 " <c-leasder>, vv   : Easygrep for string in QuickFix
 "
 
@@ -108,22 +107,12 @@ hi clear Normal
 
 
 " *---- gundam pop menu color----*
-" Remove all existing highlighting and set the defaults.
-hi clear
-"
-" " Load the syntax highlighting defaults, if it's enabled.
-if exists("syntax_on")
-   syntax reset
-endif
-
-let colors_name = "gundam"
-"   " set color of pop-up menu"
-"   " 0:
-"   " 2:green, 3:yello, 4:blue, 5:purple,
-"   " 6:green-blue, 7: white, 8: black, 9: red
-"highlight   clear
 highlight   Pmenu         ctermfg=8 ctermbg=4
 highlight   PmenuSel      ctermfg=0 ctermbg=6
 highlight   PmenuSbar     ctermfg=0 ctermbg=7
 highlight   PmenuThumb    ctermfg=8 ctermbg=7
+" *----*
+
+" *---- EasyMotion ----*
+let g:EasyMotion_leader_key = '<Leader>'
 " *----*
