@@ -1,6 +1,5 @@
 " ****************************************
-" *  Gvim portable Installation batch    *
-" *                                      *
+" *       Enhanced - VIM                 *
 " *       Author : Unic Chu              *
 " *       Version: 1.0.1020              *
 " *        GVIM  : 7.3.46                * 
@@ -83,7 +82,6 @@ map <C-k> :tabprev<CR>
 " Create cscope and tags
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 map <C-F12> :!cscope -Rb <CR> :csadd <CR> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
 " Save Usage
 map <C-S> :w <CR>
 imap <C-S> <ESC> :w <CR>
@@ -101,12 +99,13 @@ set number
 let python_highlight_all = 1
 " *----* "
 set term=xterm
-"
+
+" *---- pydiction----*
 let g:pydiction_location = '.vim/bundle/pydiction/complete-dict'
-hi clear Normal
 
 
 " *---- gundam pop menu color----*
+highlight clear Normal
 highlight   Pmenu         ctermfg=8 ctermbg=4
 highlight   PmenuSel      ctermfg=0 ctermbg=6
 highlight   PmenuSbar     ctermfg=0 ctermbg=7
@@ -114,5 +113,5 @@ highlight   PmenuThumb    ctermfg=8 ctermbg=7
 " *----*
 
 " *---- EasyMotion ----*
-let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_leader_key = '`'
 " *----*
