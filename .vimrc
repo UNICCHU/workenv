@@ -93,6 +93,7 @@ map <c-p> :cp<CR>
 " *---- Interface ----* "
 "set guifont=Monospace
 set number
+set background=dark
 " *----* "
 
 " *---- Enhanced Python Syntax ----*
