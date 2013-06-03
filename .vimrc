@@ -90,20 +90,13 @@ map <c-n> :cn<CR>
 map <c-p> :cp<CR>    
 " *----* "
 
-" *---- Interface ----* "
-"set guifont=Monospace
-set number
-set background=dark
-" *----* "
-
 " *---- Enhanced Python Syntax ----*
 let python_highlight_all = 1
 " *----* "
-set term=xterm
 
 " *---- pydiction----*
 let g:pydiction_location = '.vim/bundle/pydiction/complete-dict'
-
+" *----*
 
 " *---- gundam pop menu color----*
 highlight clear Normal
@@ -116,3 +109,11 @@ highlight   PmenuThumb    ctermfg=8 ctermbg=7
 " *---- EasyMotion ----*
 let g:EasyMotion_leader_key = '`'
 " *----*
+
+" *---- VIM Interface ----* "
+"set guifont=Monospace
+set term=xterm
+set number
+set background=dark
+" *----* "
+
