@@ -21,7 +21,7 @@
 " <c-s>             : save files
 " <c-leasder>, s/d  : cscope find symbol/defination
 " <c-n>, <c-p>      : quickfix window up/down
-" <c-j>, <c-k>      : Tab left/Righ
+" <c-h>, <c-l>      : Tab left/Righ
 " <c-leasder>, vv   : Easygrep for string in QuickFix
 "
 
