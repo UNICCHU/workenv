@@ -1,6 +1,3 @@
-[submodule "env: oh-my-zsh"]
-	path = env/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git 
 [submodule "vim: vim-indent-guides"]
 	path = vim/.vim/bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
@@ -28,9 +25,13 @@
 [submodule "vim: pydiction"]
 	path = vim/.vim/bundle/pydiction
 	url = https://github.com/vim-scripts/Pydiction.git
-#[submodule "vim: EasyGrep"]
-#	path = vim/.vim/bundle/EasyGrep
-#	url = https://github.com/vim-scripts/EasyGrep.git
+[submodule "vim: EasyGrep"]
+	path = vim/.vim/bundle/EasyGrep
+	url = https://github.com/vim-scripts/EasyGrep.git
 [submodule "vim: taglist"]
 	path = vim/.vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "env: oh-my-zsh"]
+	path = env/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git 
+
