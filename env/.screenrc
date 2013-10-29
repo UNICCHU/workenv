@@ -1,0 +1,2 @@
+# ackeack's workenv config
+hardstatus alwayslastline '%{= kw}%{w}[%{r} %d/%m/%y %C %A %{w}]%{w}[%-w%{bw}%n:%t%{= kw} %+w %=][ %{= kr}%H%{= kw} ]'
