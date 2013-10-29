@@ -1,33 +1,36 @@
-[submodule ".vim/bundle/vim-indent-guides"]
-	path = .vim/bundle/vim-indent-guides
+[submodule "env: oh-my-zsh"]
+	path = env/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git 
+[submodule "vim: vim-indent-guides"]
+	path = vim/.vim/bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
+[submodule "vim: nerdtree"]
+	path = vim/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/tagbar"]
-	path = .vim/bundle/tagbar
+[submodule "vim: tagbar"]
+	path = vim/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule ".vim/bundle/vim-easymotion"]
-	path = .vim/bundle/vim-easymotion
+[submodule "vim: vim-easymotion"]
+	path = vim/.vim/bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
-[submodule ".vim/bundle/vifm"]
-	path = .vim/bundle/vifm
+[submodule "vim: vifm"]
+	path = vim/.vim/bundle/vifm
 	url = https://github.com/istib/vifm.vim.git
-[submodule ".vim/bundle/vim-autocomplpop"]
-	path = .vim/bundle/vim-autocomplpop
+[submodule "vim: vim-autocomplpop"]
+	path = vim/.vim/bundle/vim-autocomplpop
 	url = https://github.com/othree/vim-autocomplpop.git
-[submodule ".vim/bundle/L9"]
-	path = .vim/bundle/L9
+[submodule "vim: L9"]
+	path = vim/.vim/bundle/L9
 	url = https://github.com/vim-scripts/L9.git
-[submodule ".vim/bundle/snipMate"]
-	path = .vim/bundle/snipMate
+[submodule "vim: snipMate"]
+	path = vim/.vim/bundle/snipMate
 	url = https://github.com/vim-scripts/snipMate.git
-[submodule ".vim/bundle/pydiction"]
-	path = .vim/bundle/pydiction
+[submodule "vim: pydiction"]
+	path = vim/.vim/bundle/pydiction
 	url = https://github.com/vim-scripts/Pydiction.git
-[submodule ".vim/bundle/EasyGrep"]
-	path = .vim/bundle/EasyGrep
-	url = https://github.com/vim-scripts/EasyGrep.git
-[submodule ".vim/bundle/taglist"]
-	path = .vim/bundle/taglist
+#[submodule "vim: EasyGrep"]
+#	path = vim/.vim/bundle/EasyGrep
+#	url = https://github.com/vim-scripts/EasyGrep.git
+[submodule "vim: taglist"]
+	path = vim/.vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
