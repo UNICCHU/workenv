@@ -31,7 +31,11 @@
 [submodule "vim: taglist"]
 	path = vim/.vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+
 [submodule "env: oh-my-zsh"]
 	path = env/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git 
 
+[submodule "devel: pyenv"]
+    path = devel/pyenv
+    url = https://github.com/yyuu/pyenv.git

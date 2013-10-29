@@ -50,3 +50,7 @@ alias ls-='ls -l'
 alias gg='git status'
 alias gl='git log --graph'
 
+## workenv: devel ##
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
