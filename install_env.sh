@@ -30,6 +30,5 @@ cp -rf env/oh-my-zsh $HOME/.oh-my-zsh
 cp -f env/.zshrc $HOME/.zshrc
 
 chsh -s /bin/zsh
-exec zsh
 echo 'SYS: install env-packages successfully'
 exit 0
