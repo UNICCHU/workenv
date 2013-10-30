@@ -18,16 +18,18 @@ elif [ $isUbuntu -eq "0" ]; then
     sudo apt-get install screen zsh
 fi
 
+#1. install screenrc
+cp -f env/.screenrc $HOME/.screenrc
+
+#2.  install zsh with oh-my-zsh
 git submodule init env/oh-my-zsh
 git submodule update env/oh-my-zsh
 
-#install screenrc
-cp -f env/.screenrc $HOME/.screenrc
-
-# install zsh with oh-my-zsh
 rm -rf $HOME/.oh-my-zsh
 cp -rf env/oh-my-zsh $HOME/.oh-my-zsh
 cp -f env/.zshrc $HOME/.zshrc
 
 chsh -s /bin/zsh
 exec zsh
+echo 'SYS: install env-packages successfully'
+exit 0
