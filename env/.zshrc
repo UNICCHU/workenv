@@ -50,3 +50,4 @@ alias ls-='ls -l'
 alias gg='git status'
 alias gl='git log --graph'
 
+alias screen='TERM=xterm-256color screen'

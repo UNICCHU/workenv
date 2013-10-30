@@ -26,8 +26,10 @@ fi
 
 git submodule init devel/pyenv
 git submodule update devel/pyenv
-rm -rf $HOME/.pyenv
-cp -rf devel/pyenv $HOME/.pyenv
+if [ ! -d $HOME/.pyenv ]; then
+    echo 'INFO: installing pyenv '
+    cp -rf devel/pyenv $HOME/.pyenv
+fi
 
 #### Setting .pyenv PATH ####
 export PATH=$HOME/.pyenv/bin:$PATH

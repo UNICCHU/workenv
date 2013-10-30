@@ -31,6 +31,10 @@
 [submodule "vim: taglist"]
 	path = vim/.vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "vim: auto-pairs"]
+	path = vim/.vim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+
 
 [submodule "env: oh-my-zsh"]
 	path = env/oh-my-zsh
@@ -39,3 +43,6 @@
 [submodule "devel: pyenv"]
     path = devel/pyenv
     url = https://github.com/yyuu/pyenv.git
+[submodule "auto-pairs"]
+	path = auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
