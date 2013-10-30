@@ -52,7 +52,6 @@ fi
 
 pyenv install $INSTALL_PYTHON
 pyenv global $INSTALL_PYTHON
-pyenv local $INSTALL_PYTHON
 pyenv versions
 
 pip install $PYTHON_PACKAGES
