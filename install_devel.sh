@@ -36,7 +36,6 @@ if [ $? -ne "0" ]; then
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> $HOME/.bashrc
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.bashrc
     echo 'eval "$(pyenv init -)"' >> $HOME/.bashrc
-    source $HOME/.bashrc
 fi
 
 if [ -f $HOME/.zshrc ]; then
@@ -49,7 +48,7 @@ if [ -f $HOME/.zshrc ]; then
         source $HOME/.zshrc
     fi
 fi
-
+exec $SHELL
 pyenv install $INSTALL_PYTHON
 pyenv global $INSTALL_PYTHON
 pyenv local $INSTALL_PYTHON
