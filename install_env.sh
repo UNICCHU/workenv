@@ -31,4 +31,3 @@ cp -f env/.zshrc $HOME/.zshrc
 
 chsh -s /bin/zsh
 echo 'SYS: install env-packages successfully'
-exit 0

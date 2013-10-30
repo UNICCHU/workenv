@@ -42,7 +42,7 @@ pip install $PYTHON_PACKAGES
 
 #### Configure for virtualenv ####
 export WORKON_HOME=$HOME/.virtualenvs
-source `which virtualenvwrapper.sh`
+source /usr/bin/virtualenvwrapper.sh
 
 #### write configuration files ####
 grep "## workenv: devel ##" $HOME/.bashrc
@@ -51,7 +51,7 @@ if [ $? -ne "0" ]; then
     echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> $HOME/.bashrc
     echo 'eval "$(pyenv init -)"' >> $HOME/.bashrc
     echo 'export WORKON_HOME=$HOME/.virtualenvs' >> $HOME/.bashrc
-    echo 'source `which virtualenvwrapper.sh`' >> $HOME/.bashrc
+    echo 'source /usr/bin/virtualenvwrapper.sh' >> $HOME/.bashrc
 fi
 
 if [ -f $HOME/.zshrc ]; then
@@ -61,9 +61,8 @@ if [ -f $HOME/.zshrc ]; then
         echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> $HOME/.zshrc
         echo 'eval "$(pyenv init -)"' >> $HOME/.zshrc
         echo 'export WORKON_HOME=$HOME/.virtualenvs' >> $HOME/.zshrc
-        echo 'source `which virtualenvwrapper.sh`' >> $HOME/.zshrc
+        echo 'source /usr/bin/virtualenvwrapper.sh' >> $HOME/.zshrc
     fi
 fi
 
 echo 'SYS: install devel-packages successfully'
-exit 0

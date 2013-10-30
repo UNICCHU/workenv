@@ -15,4 +15,3 @@ func_execute_and_check 'source cmds/submod_upgrade.sh'
 cp -rf vim/.vim $HOME
 cp -rf vim/.vimrc $HOME
 echo 'SYS: install vim successfully'
-exit 0
