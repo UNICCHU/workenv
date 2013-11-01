@@ -19,9 +19,6 @@
 [submodule "vim: L9"]
 	path = vim/.vim/bundle/L9
 	url = https://github.com/vim-scripts/L9.git
-[submodule "vim: snipMate"]
-	path = vim/.vim/bundle/snipMate
-	url = https://github.com/vim-scripts/snipMate.git
 [submodule "vim: pydiction"]
 	path = vim/.vim/bundle/pydiction
 	url = https://github.com/vim-scripts/Pydiction.git
@@ -43,6 +40,7 @@
 [submodule "devel: pyenv"]
     path = devel/pyenv
     url = https://github.com/yyuu/pyenv.git
-[submodule "auto-pairs"]
-	path = auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs.git
+
+[submodule "vim/.vim/bundle/vim-snipmate"]
+	path = vim/.vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate
