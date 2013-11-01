@@ -12,8 +12,12 @@ function func_execute_and_check() {
 
 func_execute_and_check 'source cmds/submod_sync.sh'
 func_execute_and_check 'source cmds/submod_upgrade.sh'
-mv -f $HOME/.vim $HOME/.vim_bak
-mv -f $HOME/.vimrc $HOME/.vimrc_bak
+if [ -f $HOME/.vimrc ]; then
+    mv -f $HOME/.vimrc $HOME/.vimrc_bak
+fi
+if [ -f $HOME/.vim ]; then
+    mv -f $HOME/.vim $HOME/.vim_bak
+fi
 cp -rf vim/.vim $HOME
 cp -rf vim/.vimrc $HOME
 echo 'SYS: install vim successfully'
