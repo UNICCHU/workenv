@@ -15,7 +15,7 @@ func_execute_and_check 'source cmds/submod_upgrade.sh'
 if [ -f $HOME/.vimrc ]; then
     mv -f $HOME/.vimrc $HOME/.vimrc_bak
 fi
-if [ -f $HOME/.vim ]; then
+if [ -d $HOME/.vim ]; then
     mv -f $HOME/.vim $HOME/.vim_bak
 fi
 cp -rf vim/.vim $HOME
