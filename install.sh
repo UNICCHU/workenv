@@ -1,4 +1,4 @@
 #!/bin/bash
-bash install_vim.sh
-bash install_env.sh  
-bash install_devel.sh
+source install_vim.sh
+source install_env.sh  
+source install_devel.sh

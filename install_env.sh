@@ -18,14 +18,26 @@ elif [ $isUbuntu -eq "0" ]; then
     sudo apt-get install screen zsh
 fi
 
-#1. install screenrc
+# install screenrc
+if [ -f $HOME/.screenrc ]; then
+    mv $HOME/.screenrc $HOME/.screenrc_bak
+fi
 cp -f env/.screenrc $HOME/.screenrc
 
-#2.  install zsh with oh-my-zsh
-git submodule init env/oh-my-zsh
-git submodule update env/oh-my-zsh
+# install zsh
+if [ ! -d env/oh-my-zsh ]; then
+    echo 'ERROR: make sure to execute update_module.sh first'
+    exit -1
+fi
+if [ -d $HOME/.oh-my-zsh ]; then
+    rm -rf $HOME/.oh-my-zsh_bak
+    mv $HOME/.oh-my-zsh $HOME/.oh-my-zsh_bak
+fi
 
-rm -rf $HOME/.oh-my-zsh
+if [ -f $HOME/.zshrc ]; then
+    mv $HOME/.zshrc $HOME/.zshrc_bak
+fi
+
 cp -rf env/oh-my-zsh $HOME/.oh-my-zsh
 cp -f env/.zshrc $HOME/.zshrc
 

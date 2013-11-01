@@ -12,6 +12,12 @@ isCentOS=$?
 grep "Ubuntu" /etc/lsb-release
 isUbuntu=$?
 
+if [ ! -d devel/pyenv ]; then
+    echo 'ERROR: make sure to execute update_module.sh first'
+    exit -1
+fi
+
+
 if [ $isCentOS -eq "0" ]; then
     echo 'SYS: yum install CentOS related devel packages'
     if [ $USER = "root" ]; then
@@ -24,8 +30,6 @@ elif [ $isUbuntu -eq "0" ]; then
     sudo apt-get install $DPKG_PACKAGES
 fi
 
-git submodule init devel/pyenv
-git submodule update devel/pyenv
 if [ ! -d $HOME/.pyenv ]; then
     echo 'INFO: installing pyenv '
     cp -rf devel/pyenv $HOME/.pyenv

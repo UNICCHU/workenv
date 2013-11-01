@@ -1,21 +1,16 @@
 #!/bin/bash
 # ackack's workenv 
 
-function func_execute_and_check() {
-    echo 'INFO: Process' $1'...'
-    $1
-    if [ $? -ne 0 ]; then
-        echo 'ERROR: Operation failed:' $1
-	exit 1
-    fi
-}
+if [ ! -d vim/.vim ]; then
+    echo 'ERROR: make sure to execute update_module.sh first'
+    exit -1
+fi
 
-func_execute_and_check 'source cmds/submod_sync.sh'
-func_execute_and_check 'source cmds/submod_upgrade.sh'
 if [ -f $HOME/.vimrc ]; then
     mv -f $HOME/.vimrc $HOME/.vimrc_bak
 fi
 if [ -d $HOME/.vim ]; then
+    rm -rf $HOME/.vim_bak
     mv -f $HOME/.vim $HOME/.vim_bak
 fi
 cp -rf vim/.vim $HOME
