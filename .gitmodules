@@ -31,7 +31,12 @@
 [submodule "vim: auto-pairs"]
 	path = vim/.vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
-
+[submodule "vim: vim-snipmate"]
+	path = vim/.vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate
+[submodule "vim: supertab"]
+	path = vim/.vim/bundle/supertab
+	url = https://github.com/ervandew/supertab
 
 [submodule "env: oh-my-zsh"]
 	path = env/oh-my-zsh
@@ -41,6 +46,5 @@
     path = devel/pyenv
     url = https://github.com/yyuu/pyenv.git
 
-[submodule "vim/.vim/bundle/vim-snipmate"]
-	path = vim/.vim/bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate
+
+
