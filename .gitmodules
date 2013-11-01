@@ -19,9 +19,6 @@
 [submodule "vim: L9"]
 	path = vim/.vim/bundle/L9
 	url = https://github.com/vim-scripts/L9.git
-[submodule "vim: pydiction"]
-	path = vim/.vim/bundle/pydiction
-	url = https://github.com/vim-scripts/Pydiction.git
 [submodule "vim: EasyGrep"]
 	path = vim/.vim/bundle/EasyGrep
 	url = https://github.com/vim-scripts/EasyGrep.git
@@ -48,3 +45,12 @@
 
 
 
+[submodule "vim/.vim/bundle/tlib_vim"]
+	path = vim/.vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "vim/.vim/bundle/vim-addon-mw-utils"]
+	path = vim/.vim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/.vim/bundle/vim-snippets"]
+	path = vim/.vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
