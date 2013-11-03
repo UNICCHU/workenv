@@ -110,10 +110,16 @@ highlight   PmenuThumb    ctermfg=8 ctermbg=7
 let g:EasyMotion_leader_key = '`'
 " *----*
 
+" *---- Plugin:xml  ----* "
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+autocmd FileType html set omnifunc=xmlcomplete#CompleteTags noci
+" *----* "
+
 " *---- VIM Interface ----* "
 "set guifont=Monospace
 set term=xterm
 set number
 set background=dark
 " *----* "
+
 

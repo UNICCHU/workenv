@@ -54,3 +54,6 @@
 [submodule "vim/.vim/bundle/vim-snippets"]
 	path = vim/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "vim/.vim/bundle/xml"]
+	path = vim/.vim/bundle/xml
+	url = https://github.com/othree/xml.vim.git
