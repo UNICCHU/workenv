@@ -1,27 +1,23 @@
 " ****************************************
 " *       Enhanced - VIM                 *
-" *       Author : Unic Chu              *
-" *       Version: 1.0.1020              *
-" *        GVIM  : 7.3.46                * 
-" *        Date  : 2011/10/20            *
+" *       Author : ackeack               *
 " ****************************************
 "
 "  **** key Mappings **** 
 " F2     : vifm
-" F3     : TagbarToggle
-" F4     : TlistToggle
-" F5     : NERDTreeToggle
-" F7     :
-" F12    : Create Tags
+" F3     : NERDTreeToggle
+" F4     : TagbarToggle
+" F5     : Compile and execute (c, python, sh)
+" F11    : tabprev
+" F12    : tabnext
 "
 " csa    : add cscope.out to database
 " <c-F12>           : Create cscope.out files.
+" <c-j>             : snipMate complete e.g: ifmain<C-j>
 " <c-x> <x-o>       : omni complete function
 " tab               : complete function
 " <c-s>             : save files
 " <c-leasder>, s/d  : cscope find symbol/defination
-" <c-n>, <c-p>      : quickfix window up/down
-" <c-h>, <c-l>      : Tab left/Righ
 " <c-leasder>, vv   : Easygrep for string in QuickFix
 "
 
@@ -72,21 +68,22 @@ set softtabstop=4
 " *----* "
 
 " *---- Key Mapping ----* "
-nnoremap <silent> <F4> :NERDTreeToggle<CR>
-nnoremap <silent> <F3> :TagbarToggle<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
+nnoremap <silent> <F4> :TagbarToggle<CR>
 nnoremap <silent> <F2> :EditVifm<CR>
 " Tab Usage
-map <C-h> :tabnext<CR>
-map <C-l> :tabprev<CR>
+map <F12> :tabn<CR>
+map <F11> :tabp<CR>
 " Create cscope and tags
-map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-map <C-F12> :!cscope -Rb <CR> :csadd <CR> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" map <C-F12> :!cscope -Rb <CR> :csadd <CR> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " Save Usage
 map <C-S> :w <CR>
 imap <C-S> <ESC> :w <CR>
-" QuickFix Windows
-map <c-n> :cn<CR>   
-map <c-p> :cp<CR>    
+" Compile 
+autocmd BufRead *.py nmap <F5> :w !python %<CR>
+autocmd FileType c map <F5> :!gcc --o "%:p:r.out" "%:p" && "%:p:r.out" <CR>
+autocmd BufRead *.sh nmap <F5> :w !sh %<CR>
 " *----* "
 
 " *---- Enhanced Python Syntax ----*
@@ -112,6 +109,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
 
 " *---- syntastic ----*"
 let g:syntastic_python_checkers=['pyflakes', 'python']
+let g:syntastic_check_on_open=1
 " *----*"
 
 " *---- VIM Interface ----* "
