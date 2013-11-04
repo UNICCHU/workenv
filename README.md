@@ -8,8 +8,8 @@ ackeack's work environment
 
 How to install:
 ------
-$ sh update_module.sh
-$ source install.sh (or $install_vim/env/devel.sh)
+- $ sh update_module.sh
+- $ source install.sh (or $install_vim/env/devel.sh)
 
 vim
 -----
@@ -21,13 +21,13 @@ Keybinding:
 * F11    : tabprev
 * F12    : tabnext
 * csa    : add cscope.out to database
-* <C-F12>           : Create cscope.out files.
-* <C-j>             : snipMate complete e.g: ifmain<C-j>
-* <C-x> <x-o>       : omni complete function
-* tab               : complete function
-* <C-s>             : save files
-* <C-leasder>, s/d  : cscope find symbol/defination
-* <leasder>, vv   : Easygrep for string in QuickFix
+* C-F12           : Create cscope.out files.
+* C-j             : snipMate complete e.g: ifmain<C-j>
+* C-xm x-o        : omni complete function
+* tab             : complete function
+* C-s             : save files
+* C-leasder, s/d  : cscope find symbol/defination
+* leasder, vv     : Easygrep for string in QuickFix
 
 env
 -----
