@@ -18,7 +18,7 @@
 " tab               : complete function
 " <c-s>             : save files
 " <c-leasder>, s/d  : cscope find symbol/defination
-" <c-leasder>, vv   : Easygrep for string in QuickFix
+" <leasder>, vv   : Easygrep for string in QuickFix
 "
 
 " *---- plugin: Pathegon ----* "
@@ -27,9 +27,8 @@ filetype plugin indent on
 " *----* "
 
 " *---- plugin: NERD Tree ----* "
-let NERDTreeChDirMode=1
+let NERDTreeChDirMode=2
 let NERDTreeMouseMode=2
-let NERDTreeQuitOnOpen=1
 let NERDTreeHighlightCursorline=1
 " let NERDTreeWinPos="right"
 " *----* "
@@ -57,7 +56,6 @@ smap <C-J> <Plug>snipMateNextOrTrigger
 set nocompatible
 set bs=2
 set nobackup
-syntax on
 " *----* "
 
 " *---- key Tabs defination ----* "
@@ -116,6 +114,7 @@ let g:syntastic_check_on_open=1
 "set guifont=Monospace
 set term=xterm
 set number
+syntax on
 set background=dark
 " *----* "
 
