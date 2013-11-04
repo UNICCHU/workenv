@@ -26,8 +26,7 @@
 "
 
 " *---- plugin: Pathegon ----* "
-filetype off
-call pathogen#runtime_append_all_bundles() 
+execute pathogen#infect()
 filetype plugin indent on
 " *----* "
 
@@ -54,12 +53,13 @@ let Tlist_Exit_OnlyWindow=1
 
 " *---- plugin: snipMate ----* "
 filetype plugin on
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
 " *----* "
 
 " *---- keyboard ----* "
 set nocompatible
 set bs=2
-" BUGBUG: supertab can't work "set paste
 set nobackup
 syntax on
 " *----* "
@@ -72,8 +72,7 @@ set softtabstop=4
 " *----* "
 
 " *---- Key Mapping ----* "
-nnoremap <silent> <F5> :NERDTreeToggle<CR>
-nnoremap <silent> <F4> :TlistToggle<CR>
+nnoremap <silent> <F4> :NERDTreeToggle<CR>
 nnoremap <silent> <F3> :TagbarToggle<CR>
 nnoremap <silent> <F2> :EditVifm<CR>
 " Tab Usage
@@ -106,14 +105,14 @@ highlight   PmenuSbar     ctermfg=0 ctermbg=7
 highlight   PmenuThumb    ctermfg=8 ctermbg=7
 " *----*
 
-" *---- EasyMotion ----*
-let g:EasyMotion_leader_key = '`'
-" *----*
-
 " *---- Plugin:xml  ----* "
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
-autocmd FileType html set omnifunc=xmlcomplete#CompleteTags noci
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
 " *----* "
+
+" *---- syntastic ----*"
+let g:syntastic_python_checkers=['pyflakes', 'python']
+" *----*"
 
 " *---- VIM Interface ----* "
 "set guifont=Monospace
@@ -121,5 +120,4 @@ set term=xterm
 set number
 set background=dark
 " *----* "
-
 

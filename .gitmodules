@@ -57,3 +57,9 @@
 [submodule "vim/.vim/bundle/xml"]
 	path = vim/.vim/bundle/xml
 	url = https://github.com/othree/xml.vim.git
+[submodule "vim/.vim/bundle/Pydiction"]
+	path = vim/.vim/bundle/Pydiction
+	url = https://github.com/vim-scripts/Pydiction.git
+[submodule "vim/.vim/bundle/syntastic"]
+	path = vim/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
