@@ -1,3 +1,26 @@
 # ackeack's workenv config
 hardstatus alwayslastline '%{= kw}%{w}[%{r} %d/%m/%y %C %A %{w}]%{w}[%-w%{bw}%n:%t%{= kw} %+w %=][ %{= kr}%H%{= kw} ]'
 term screen-256color
+
+# Start message
+startup_message off
+
+# Set hardstatus always on
+hardstatus alwayslastline " %-Lw%{= Bw}%n%f %t%{-}%+Lw %=| %M %d %0c:%s "
+
+# Set default encoding using utf8
+defutf8 on
+
+# Disable vbell
+vbell off
+
+# Keboard binding
+# bind F11 to move to previous window
+bindkey -k F1 prev
+# bind F12 to move to next window
+bindkey -k F2 next
+# bind Alt`~= to screen0~12
+bindkey "^[`" select 0
+bindkey "^[1" select 1
+bindkey "^[2" select 2
+bindkey "^[3" select 3
