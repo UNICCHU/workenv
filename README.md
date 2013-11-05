@@ -11,7 +11,7 @@ How to install:
 - $ sh update_module.sh
 - $ source install.sh (or $install_vim/env/devel.sh)
 
-vim
+vim-enhanced
 -----
 Keybinding: 
 * F2     : vifm
@@ -22,7 +22,7 @@ Keybinding:
 * F12    : tabnext
 * csa    : add cscope.out to database
 * C-F12           : Create cscope.out files.
-* C-j             : snipMate complete e.g: ifmain<C-j>
+* C-j             : snipMate complete e.g: ifmain C-j
 * C-xm x-o        : omni complete function
 * tab             : complete function
 * C-s             : save files

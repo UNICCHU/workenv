@@ -26,6 +26,16 @@ execute pathogen#infect()
 filetype plugin indent on
 " *----* "
 
+" *---- VIM Interface ----* "
+"set guifont=Monospace
+set term=xterm
+set number
+highlight LineNr term=bold cterm=NONE ctermfg=darkgrey ctermbg=NONE
+syntax on
+set background=dark
+set encoding=utf-8
+" *----* "
+
 " *---- plugin: NERD Tree ----* "
 let NERDTreeChDirMode=2
 let NERDTreeMouseMode=2
@@ -70,8 +80,8 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :TagbarToggle<CR>
 nnoremap <silent> <F2> :EditVifm<CR>
 " Tab Usage
-map <F12> :tabn<CR>
-map <F11> :tabp<CR>
+map <F8> :tabn<CR>
+map <F7> :tabp<CR>
 " Create cscope and tags
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " map <C-F12> :!cscope -Rb <CR> :csadd <CR> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -110,11 +120,12 @@ let g:syntastic_python_checkers=['pyflakes', 'python']
 let g:syntastic_check_on_open=1
 " *----*"
 
-" *---- VIM Interface ----* "
-"set guifont=Monospace
-set term=xterm
-set number
-syntax on
-set background=dark
+" *---- airline ----* "
+set t_Co=256
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='badwolf'
 " *----* "
+
+
 
