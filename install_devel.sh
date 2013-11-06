@@ -146,7 +146,7 @@ function install_pyenv_python () {
     #### Install specific python packages ####
     pyenv install $INSTALL_PYTHON
     pyenv global $INSTALL_PYTHON
-    pyenv versions
+    p#yenv versions
 }
 
 function install_python_module () {
@@ -160,7 +160,7 @@ function install_python_module () {
     #### write configuration files ####
     grep "## workenv: virtualenv ##" $HOME/.bash_profile
     if [ $? -ne "0" ]; then
-        echo '## workenv: virtualenv ##' >> $HOME/.bashrc
+        echo '## workenv: virtualenv ##' >> $HOME/.bash_profile
         echo 'export WORKON_HOME=$HOME/.virtualenvs' >> $HOME/.bash_profile
         echo 'source /usr/bin/virtualenvwrapper.sh' >> $HOME/.bash_profile
     fi
@@ -188,6 +188,5 @@ check_procedure 'devel-packages' install_devel
 check_procedure 'pyenv' install_pyenv
 check_procedure 'python modules' install_python_module
 green_print "SYS: finish installing devel packages."
-
 
 
