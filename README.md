@@ -9,7 +9,7 @@ ackeack's work environment
 How to install:
 ------
 - $ sh update_module.sh
-- $ source install.sh (or $install_vim/env/devel.sh)
+- $ source install.sh (or $ source install_vim/env/devel.sh)
 
 vim-enhanced
 -----
@@ -18,9 +18,10 @@ Keybinding:
 * F3     : NERDTreeToggle
 * F4     : TagbarToggle
 * F5     : Compile and execute (c, python, sh)
-* F11    : tabprev
-* F12    : tabnext
-* csa    : add cscope.out to database
+* F7     : tabprev
+* F8     : tabnext
+* S-F7   : bn
+* S-F8   : bp
 * C-F12           : Create cscope.out files.
 * C-j             : snipMate complete e.g: ifmain C-j
 * C-xm x-o        : omni complete function

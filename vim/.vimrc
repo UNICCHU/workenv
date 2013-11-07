@@ -10,8 +10,6 @@
 " F5     : Compile and execute (c, python, sh)
 " F11    : tabprev
 " F12    : tabnext
-"
-" csa    : add cscope.out to database
 " <c-F12>           : Create cscope.out files.
 " <c-j>             : snipMate complete e.g: ifmain<C-j>
 " <c-x> <x-o>       : omni complete function
