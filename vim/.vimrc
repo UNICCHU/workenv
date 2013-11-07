@@ -79,9 +79,11 @@ set softtabstop=4
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :TagbarToggle<CR>
 nnoremap <silent> <F2> :EditVifm<CR>
-" Tab Usage
+" Tab/Buffer Usage
 map <F8> :tabn<CR>
 map <F7> :tabp<CR>
+map <S-F8> :bn<CR>
+map <S-F7> :bp<CR>
 " Create cscope and tags
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " map <C-F12> :!cscope -Rb <CR> :csadd <CR> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -92,6 +94,7 @@ imap <C-S> <ESC> :w <CR>
 autocmd BufRead *.py nmap <F5> :w !python %<CR>
 autocmd FileType c map <F5> :!gcc --o "%:p:r.out" "%:p" && "%:p:r.out" <CR>
 autocmd BufRead *.sh nmap <F5> :w !sh %<CR>
+autocmd BufRead *.sh nmap <S-F5> :w !bash -x %<CR>
 " *----* "
 
 " *---- Enhanced Python Syntax ----*
@@ -104,7 +107,7 @@ let g:pydiction_location = '.vim/bundle/pydiction/complete-dict'
 
 " *---- gundam pop menu color----*
 highlight clear Normal
-highlight   Pmenu         ctermfg=8 ctermbg=4
+highlight   Pmenu         ctermfg=yellow ctermbg=4
 highlight   PmenuSel      ctermfg=0 ctermbg=6
 highlight   PmenuSbar     ctermfg=0 ctermbg=7
 highlight   PmenuThumb    ctermfg=8 ctermbg=7
