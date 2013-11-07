@@ -135,6 +135,7 @@ function install_zsh() {
     light_print "SYS: Do you want to change the default shell to zsh? [Y/n]"
     read input_confirm
     if [[ $input_confirm == "N" ]] || [[ $input_confirm == "n" ]]; then
+      echo $SHELL 
     else
       chsh -s /bin/zsh
     fi
