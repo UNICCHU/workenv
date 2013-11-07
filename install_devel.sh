@@ -153,7 +153,7 @@ function install_python_module () {
     return_status=$?
 
     export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/bin/virtualenvwrapper.sh
+    [[ -s /usr/bin/virtualenvwrapper.sh  ]] && source /usr/bin/virtualenvwrapper.sh
 
     #### write configuration files ####
     grep "## workenv: virtualenv ##" $HOME/.bash_profile > /dev/null 2>&1
@@ -161,14 +161,14 @@ function install_python_module () {
     if [ $? -ne "0" ]; then
         echo '## workenv: virtualenv ##' >> $HOME/.bash_profile
         echo 'export WORKON_HOME=$HOME/.virtualenvs' >> $HOME/.bash_profile
-        echo '[[ -s /usr/bin/virtualenvwrapper.sh  ]] && source source /usr/bin/virtualenvwrapper.sh' >> $HOME/.bash_profile
+        echo '[[ -s /usr/bin/virtualenvwrapper.sh  ]] && source /usr/bin/virtualenvwrapper.sh' >> $HOME/.bash_profile
     fi
     
     grep "## workenv: virtualenv ##" $HOME/.zshrc > /dev/null 2>&1
     if [ $? -ne "0" ]; then
         echo "## workenv: virtualenv ##" >> $HOME/.zshrc
         echo 'export WORKON_HOME=$HOME/.virtualenvs' >> $HOME/.zshrc
-        echo '[[ -s /usr/bin/virtualenvwrapper.sh  ]] && source source /usr/bin/virtualenvwrapper.sh' >> $HOME/.zshrc
+        echo '[[ -s /usr/bin/virtualenvwrapper.sh  ]] && source /usr/bin/virtualenvwrapper.sh' >> $HOME/.zshrc
     fi
 
     if [[ $return_status -ne "0" ]]; then
