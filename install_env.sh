@@ -41,6 +41,49 @@ function check_procedure () {
     fi
 }
 
+function install_vifm () {
+    return_status=999
+    case $OS in
+        "CentOS")
+            if [ $USER = "root" ]; then
+                yum install -y install ncurses-libs ncurses-devel ncurses-base ncurses
+            else 
+                red_print "WARNING:The user has no privileges to install yum packages, sudo yum install"
+                sudo yum install -y install ncurses-libs ncurses-devel ncurses-base ncurses
+            fi
+            current=$PWD
+            cd env/vifm-0.7.6
+            ./configure
+            make > /dev/null 2>&1
+            return_status=$?
+            make install > /dev/null 2>&1
+            make clean > /dev/null 2>&1
+            make distclean > /dev/null 2>&1
+            cd $current
+            ;;
+        "Ubuntu")
+            light_print "SYS: sudo apt-get install Ubuntu related packages" 
+            sudo apt-get install vifm
+            return_status=$?
+            ;;
+        "OSX")
+            brew list > /dev/null 2>&1
+            if [[ $? -eq "127" ]]; then
+                ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)" 
+            fi
+            brew install vifm
+            return_status=$?
+            ;;
+    esac
+
+    if [[ $return_status -ne "0" ]]; then
+        red_print "ERROR: vifm does not install or install incorrectly"
+    else
+        green_print "INFO: vifm install successfully"
+    fi
+}
+
+
 function install_screen () {
     return_status=999
     case $OS in
@@ -52,13 +95,11 @@ function install_screen () {
                 sudo yum install -y screen
             fi
             return_status=$?
-            echo 'CentOS'
             ;;
         "Ubuntu")
             light_print "SYS: sudo apt-get install Ubuntu related packages" 
             sudo apt-get install screen
             return_status=$?
-            echo 'Ubuntu'
             ;;
         "OSX")
             brew list > /dev/null 2>&1
@@ -149,6 +190,7 @@ function install_zsh() {
 
 # Main Install Procedure
 detect_os
+check_procedure 'vifm' install_vifm
 check_procedure 'screen' install_screen
 check_procedure 'zsh' install_zsh
 green_print 'SYS: Finish install env-packages'
