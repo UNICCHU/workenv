@@ -144,7 +144,7 @@ function install_pyenv_python () {
     #### Install specific python packages ####
     pyenv install $INSTALL_PYTHON
     pyenv global $INSTALL_PYTHON
-    p#yenv versions
+    pyenv versions
 }
 
 function install_python_module () {
