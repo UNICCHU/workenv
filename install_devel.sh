@@ -41,7 +41,7 @@ function yellow_print() {
 }
 
 function check_procedure () {
-    light_print "SYS: Do you want yo install $1? [Y/n]"
+    light_print "SYS: Do you want to install $1? [Y/n]"
     read input_key
     if [[ $input_key == "N" ]] || [[ $input_key == "n" ]]; then
         yellow_print "INFO: skip $1 packages" 
@@ -113,20 +113,18 @@ function install_pyenv () {
     eval "$(pyenv init -)"
 
     #### write configuration files ####
-    grep "## workenv: pyenv ##" $HOME/.bash_profile
+    grep "## workenv: pyenv ##" $HOME/.bash_profile > /dev/null 2>&1
     if [ $? -ne "0" ]; then
         echo '## workenv: pyenv ##' >> $HOME/.bash_profile
         echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> $HOME/.bash_profile
         echo 'eval "$(pyenv init -)"' >> $HOME/.bash_profile
     fi
     
-    if [ -f $HOME/.zshrc ]; then
-        grep "## workenv: pyenv ##" $HOME/.zshrc
-        if [ $? -ne "0" ]; then
-            echo "## workenv: pyenv ##" >> $HOME/.zshrc
-            echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> $HOME/.zshrc
-            echo 'eval "$(pyenv init -)"' >> $HOME/.zshrc
-        fi
+    grep "## workenv: pyenv ##" $HOME/.zshenv > /dev/null 2>&1
+    if [ $? -ne "0" ]; then
+        echo "## workenv: pyenv ##" >> $HOME/.zshenv
+        echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> $HOME/.zshenv
+        echo 'eval "$(pyenv init -)"' >> $HOME/.zshenv
     fi
 
     if [[ $return_status -ne "0" ]]; then
