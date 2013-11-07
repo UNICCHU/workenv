@@ -79,10 +79,10 @@ function install_screen () {
     cp -f env/.screenrc $HOME/.screenrc
 
     #### write configuration files ####
-    grep "## workenv: screen ##" $HOME/.zshenv > /dev/null 2>&1
+    grep "## workenv: screen ##" $HOME/.zshrc > /dev/null 2>&1
     if [ $? -ne "0" ]; then
-        echo '## workenv: screen ##' >> $HOME/.zshenv
-        echo "alias screen='TERM=xterm-256color screen'" >> $HOME/.zshenv
+        echo '## workenv: screen ##' >> $HOME/.zshrc
+        echo "alias screen='TERM=xterm-256color screen'" >> $HOME/.zshrc
     fi
  
     if [[ $return_status -ne "0" ]]; then
