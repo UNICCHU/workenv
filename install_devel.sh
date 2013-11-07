@@ -153,10 +153,17 @@ function install_python_module () {
     return_status=$?
 
     export WORKON_HOME=$HOME/.virtualenvs
-    if [[ $OS == "OSX" ]]; then
-        [[ -s /usr/local/bin/virtualenvwrapper.sh  ]] && source /usr/local/bin/virtualenvwrapper.sh
+
+    find $HOME/.pyenv/versions/ -name virtualenvwrapper.sh | egrep '.*'
+    if [[ $? -eq "0" ]]; then
+        env_path=`find $HOME/.pyenv/versions/ -name virtualenvwrapper.sh`
+        [[ -s $env_path ]] && source $env_path
     else
-        [[ -s /usr/bin/virtualenvwrapper.sh  ]] && source /usr/bin/virtualenvwrapper.sh
+        if [[ $OS == "OSX" ]]; then
+            [[ -s /usr/local/bin/virtualenvwrapper.sh  ]] && source /usr/local/bin/virtualenvwrapper.sh
+        else
+            [[ -s /usr/bin/virtualenvwrapper.sh  ]] && source /usr/bin/virtualenvwrapper.sh
+        fi
     fi
 
     #### write configuration files ####
@@ -165,21 +172,35 @@ function install_python_module () {
     if [ $? -ne "0" ]; then
         echo '## workenv: virtualenv ##' >> $HOME/.bash_profile
         echo 'export WORKON_HOME=$HOME/.virtualenvs' >> $HOME/.bash_profile
-        if [[ $OS == "OSX" ]]; then
-            echo '[[ -s /usr/local/bin/virtualenvwrapper.sh  ]] && source /usr/local/bin/virtualenvwrapper.sh' >> $HOME/.bash_profile
+
+        find $HOME/.pyenv/versions/ -name virtualenvwrapper.sh | egrep '.*'
+        if [[ $? -eq "0" ]]; then
+            env_path=`find $HOME/.pyenv/versions/ -name virtualenvwrapper.sh`
+            echo "[[ -s $env_path ]] && source $env_path" >> $HOME/.bash_profile
         else
-            echo '[[ -s /usr/bin/virtualenvwrapper.sh  ]] && source /usr/bin/virtualenvwrapper.sh' >> $HOME/.bash_profile
+            if [[ $OS == "OSX" ]]; then
+                echo '[[ -s /usr/local/bin/virtualenvwrapper.sh  ]] && source /usr/local/bin/virtualenvwrapper.sh' >> $HOME/.bash_profile
+            else
+                echo '[[ -s /usr/bin/virtualenvwrapper.sh  ]] && source /usr/bin/virtualenvwrapper.sh' >> $HOME/.bash_profile
+            fi
         fi
     fi
-    
+
     grep "## workenv: virtualenv ##" $HOME/.zshrc > /dev/null 2>&1
     if [ $? -ne "0" ]; then
         echo "## workenv: virtualenv ##" >> $HOME/.zshrc
         echo 'export WORKON_HOME=$HOME/.virtualenvs' >> $HOME/.zshrc
-        if [[ $OS == "OSX" ]]; then
-            echo '[[ -s /usr/local/bin/virtualenvwrapper.sh  ]] && source /usr/local/bin/virtualenvwrapper.sh' >> $HOME/.zshrc
+ 
+        find $HOME/.pyenv/versions/ -name virtualenvwrapper.sh | egrep '.*'
+        if [[ $? -eq "0" ]]; then
+            env_path=`find $HOME/.pyenv/versions/ -name virtualenvwrapper.sh`
+            echo "[[ -s $env_path ]] && source $env_path" >> $HOME/.zshrc
         else
-            echo '[[ -s /usr/bin/virtualenvwrapper.sh  ]] && source /usr/bin/virtualenvwrapper.sh' >> $HOME/.zshrc
+            if [[ $OS == "OSX" ]]; then
+                echo '[[ -s /usr/local/bin/virtualenvwrapper.sh  ]] && source /usr/local/bin/virtualenvwrapper.sh' >> $HOME/.zshrc
+            else
+                echo '[[ -s /usr/bin/virtualenvwrapper.sh  ]] && source /usr/bin/virtualenvwrapper.sh' >> $HOME/.zshrc
+            fi
         fi
     fi
 
