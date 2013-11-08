@@ -118,12 +118,18 @@ function install_screen () {
         mv $HOME/.screenrc $HOME/.screenrc_bak
     fi
     cp -f env/.screenrc $HOME/.screenrc
+    alias screen='TERM=xterm-256color screen'
 
     #### write configuration files ####
     grep "## workenv: screen ##" $HOME/.zshrc > /dev/null 2>&1
     if [ $? -ne "0" ]; then
         echo '## workenv: screen ##' >> $HOME/.zshrc
         echo "alias screen='TERM=xterm-256color screen'" >> $HOME/.zshrc
+    fi
+    grep "## workenv: screen ##" $HOME/.bash_profile> /dev/null 2>&1
+    if [ $? -ne "0" ]; then
+        echo '## workenv: screen ##' >> $HOME/.bash_profile
+        echo "alias screen='TERM=xterm-256color screen'" >> $HOME/.bash_profile
     fi
  
     if [[ $return_status -ne "0" ]]; then
@@ -132,6 +138,62 @@ function install_screen () {
         green_print "INFO: screen install successfully"
     fi
 }
+
+function install_tmux () {
+    return_status=999
+    case $OS in
+        "CentOS")
+            if [ $USER = "root" ]; then
+                rpm -ivh http://mirror01.idc.hinet.net/EPEL/6/x86_64/epel-release-6-8.noarch.rpm
+                yum install -y tmux
+            else 
+                red_print "WARNING:The user has no privileges to install yum packages, sudo yum install"
+                sudo rpm -ivh http://mirror01.idc.hinet.net/EPEL/6/x86_64/epel-release-6-8.noarch.rpm
+                sudo yum install -y tmux
+            fi
+            return_status=$?
+            ;;
+        "Ubuntu")
+            light_print "SYS: sudo apt-get install Ubuntu related packages" 
+            sudo apt-get install tmux
+            return_status=$?
+            ;;
+        "OSX")
+            brew list > /dev/null 2>&1
+            if [[ $? -eq "127" ]]; then
+                ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)" 
+            fi
+            brew install tmux
+            return_status=$?
+            ;;
+    esac
+
+    # install tmux conf
+    if [ -f $HOME/.tmux.conf]; then
+        mv $HOME/.tmux.conf $HOME/.tmux.conf.bak
+    fi
+    cp -f env/.tmux.conf $HOME/.tmux.conf
+
+    alias tmux='DISPLAY=:0.0 TERM=screen-256color tmux -2'
+    #### write configuration files ####
+    grep "## workenv: tmux ##" $HOME/.zshrc > /dev/null 2>&1
+    if [ $? -ne "0" ]; then
+        echo '## workenv: tmux ##' >> $HOME/.zshrc
+        echo "alias tmux='DISPLAY=:0.0 TERM=screen-256color tmux -2'" >> $HOME/.zshrc
+    fi
+    grep "## workenv: tmux ##" $HOME/.bash_profile > /dev/null 2>&1
+    if [ $? -ne "0" ]; then
+        echo '## workenv: tmux ##' >> $HOME/.bash_profile
+        echo "alias tmux='DISPLAY=:0.0 TERM=screen-256color tmux -2'" >> $HOME/.bash_profile
+    fi
+ 
+    if [[ $return_status -ne "0" ]]; then
+        red_print "ERROR: tmux does not install or install incorrectly"
+    else
+        green_print "INFO: tmux install successfully"
+    fi
+}
+
 
 function install_zsh() {
     return_status=999
@@ -192,6 +254,7 @@ function install_zsh() {
 detect_os
 check_procedure 'vifm' install_vifm
 check_procedure 'screen' install_screen
+check_procedure 'tmux' install_tmux
 check_procedure 'zsh' install_zsh
 green_print 'SYS: Finish install env-packages'
 
