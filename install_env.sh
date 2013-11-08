@@ -231,6 +231,14 @@ function install_zsh() {
     if [ -f $HOME/.zshrc ]; then
         mv $HOME/.zshrc $HOME/.zshrc_bak
     fi
+
+    # turn off dirty check in git repo
+    grep "hide-status" $HOME/.gitconfig> /dev/null 2>&1
+    if [ $? -ne "0" ]; then
+        echo '' >> $HOME/.gitconfig
+        echo "[oh-my-zsh]" >> $HOME/.gitconfig
+        echo "    hide-status = 1" >> $HOME/.gitconfig
+    fi
     
     cp -rf env/oh-my-zsh $HOME/.oh-my-zsh
     cp -f env/.zshrc $HOME/.zshrc
