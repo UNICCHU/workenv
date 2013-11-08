@@ -46,14 +46,14 @@ function install_vifm () {
     case $OS in
         "CentOS")
             if [ $USER = "root" ]; then
-                yum install -y install ncurses-libs ncurses-devel ncurses-base ncurses
+                yum install -y ncurses-libs ncurses-devel ncurses-base ncurses
             else 
                 red_print "WARNING:The user has no privileges to install yum packages, sudo yum install"
-                sudo yum install -y install ncurses-libs ncurses-devel ncurses-base ncurses
+                sudo yum install -y ncurses-libs ncurses-devel ncurses-base ncurses
             fi
             current=$PWD
             cd env/vifm-0.7.6
-            ./configure
+            ./configure > /dev/null 2>&1
             make > /dev/null 2>&1
             return_status=$?
             make install > /dev/null 2>&1
@@ -169,7 +169,7 @@ function install_tmux () {
     esac
 
     # install tmux conf
-    if [ -f $HOME/.tmux.conf]; then
+    if [ -f $HOME/.tmux.conf ]; then
         mv $HOME/.tmux.conf $HOME/.tmux.conf.bak
     fi
     cp -f env/.tmux.conf $HOME/.tmux.conf

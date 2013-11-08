@@ -149,6 +149,10 @@ function install_pyenv_python () {
 
 function install_python_module () {
     return_status=999
+    which pip > /dev/null 2>&1
+    if [[ $? -ne "0" ]]; then
+        easy_install pip
+    fi
     pip install $PYTHON_PACKAGES
     return_status=$?
 
