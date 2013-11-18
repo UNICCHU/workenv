@@ -74,6 +74,11 @@ set softtabstop=4
 " *----* "
 
 " *---- Key Mapping ----* "
+imap DD <Esc>:d<CR>
+imap WW <Esc>:w<CR>
+imap II <Esc>:I<CR>
+imap AA <Esc>:A<CR>
+imap OO <Esc>:O<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :TagbarToggle<CR>
 nnoremap <silent> <F2> :EditVifm<CR>
@@ -85,9 +90,6 @@ map <S-F7> :bp<CR>
 " Create cscope and tags
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " map <C-F12> :!cscope -Rb <CR> :csadd <CR> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-" Save Usage
-map <C-S> :w <CR>
-imap <C-S> <ESC> :w <CR>
 " Compile 
 autocmd BufRead *.py nmap <F5> :w !python %<CR>
 autocmd FileType c map <F5> :!gcc --o "%:p:r.out" "%:p" && "%:p:r.out" <CR>
