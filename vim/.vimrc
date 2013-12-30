@@ -29,6 +29,7 @@ filetype plugin indent on
 set term=xterm
 set number
 highlight LineNr term=bold cterm=NONE ctermfg=darkgrey ctermbg=NONE
+highlight Visual term=reverse ctermfg=4 ctermbg=7
 syntax on
 set background=dark
 set encoding=utf-8
