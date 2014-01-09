@@ -1,7 +1,8 @@
-#!/bin/basH
+#!/bin/bash
 # ackeack's workenv config
 
 OS="none"
+auto=$1
 
 function detect_os() {
     isMac=`uname`
@@ -31,6 +32,11 @@ function yellow_print() {
 }
 
 function check_procedure () {
+    if [[ $auto == "autoinstall" ]]; then
+        yellow_print "INFO: install $1 packages"
+        $2
+        return
+    fi
     light_print "SYS: Do you want to install $1? [Y/n]"
     read input_key
     if [[ $input_key == "N" ]] || [[ $input_key == "n" ]]; then
@@ -242,13 +248,18 @@ function install_zsh() {
     
     cp -rf env/oh-my-zsh $HOME/.oh-my-zsh
     cp -f env/.zshrc $HOME/.zshrc
-
-    light_print "SYS: Do you want to change the default shell to zsh? [Y/n]"
-    read input_confirm
-    if [[ $input_confirm == "N" ]] || [[ $input_confirm == "n" ]]; then
-      echo $SHELL 
+    
+    if [[ $auto == "autoinstall" ]]; then
+        light_print "SYS: change the default shell to zsh"
+        chsh -s /bin/zsh
     else
-      chsh -s /bin/zsh
+        light_print "SYS: Do you want to change the default shell to zsh? [Y/n]"
+        read input_confirm
+        if [[ $input_confirm == "N" ]] || [[ $input_confirm == "n" ]]; then
+          echo $SHELL 
+        else
+          chsh -s /bin/zsh
+        fi
     fi
     
     if [[ $return_status -ne "0" ]]; then
@@ -265,6 +276,5 @@ check_procedure 'screen' install_screen
 check_procedure 'tmux' install_tmux
 check_procedure 'zsh' install_zsh
 green_print 'SYS: Finish install env-packages'
-
 
 

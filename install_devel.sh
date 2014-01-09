@@ -13,6 +13,7 @@ INSTALL_PYTHON="2.7.5"
 PYTHON_PACKAGES="readline ipython virtualenv virtualenvwrapper nose"
 
 OS="none"
+auto=$1
 
 function detect_os() {
     isMac=`uname`
@@ -41,6 +42,11 @@ function yellow_print() {
 }
 
 function check_procedure () {
+    if [[ $auto == "autoinstall" ]]; then
+        yellow_print "INFO: install $1 packages"
+        $2
+        return
+    fi
     light_print "SYS: Do you want to install $1? [Y/n]"
     read input_key
     if [[ $input_key == "N" ]] || [[ $input_key == "n" ]]; then
@@ -222,5 +228,4 @@ check_procedure 'devel-packages' install_devel
 check_procedure 'pyenv' install_pyenv
 check_procedure 'python modules' install_python_module
 green_print "SYS: finish installing devel packages."
-
 

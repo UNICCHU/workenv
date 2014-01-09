@@ -9,7 +9,7 @@ ackeack's work environment
 How to install:
 ------
 - $ sh update_module.sh
-- $ source install.sh (or $ source install_vim/env/devel.sh)
+- $ source install.sh OR source install_auto.sh 
 
 vim-enhanced
 -----
@@ -34,8 +34,10 @@ env
 -----
 * zsh
 * screen
+* tmux with screen setting
 
 devel
 -----
 * devel packages
 * pyenv
+* python 2.7 version
