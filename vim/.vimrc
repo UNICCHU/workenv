@@ -102,10 +102,6 @@ autocmd BufRead *.sh nmap <S-F5> :w !bash -x %<CR>
 let python_highlight_all = 1
 " *----* "
 
-" *---- pydiction----*
-let g:pydiction_location = '.vim/bundle/pydiction/complete-dict'
-" *----*
-
 " *---- gundam pop menu color----*
 highlight clear Normal
 highlight   Pmenu         ctermfg=yellow ctermbg=4
