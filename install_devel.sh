@@ -63,17 +63,17 @@ function install_devel () {
     case $OS in
         "CentOS")
             if [ $USER = "root" ]; then
-                yum install -y $YUM_PACKAGES
+                yum install -y $(echo $YUM_PACKAGES)
             else 
                 red_print "WARNING:The user has no privileges to install yum packages, sudo yum install"
-                sudo yum install -y $YUM_PACKAGES
+                sudo yum install -y $(echo $YUM_PACKAGES)
             fi
             return_status=$?
             echo 'CentOS'
             ;;
         "Ubuntu")
             light_print "SYS: sudo apt-get install Ubuntu related python packages" 
-            sudo apt-get install $DPKG_PACKAGES
+            sudo apt-get install $(echo $DPKG_PACKAGES)
             return_status=$?
             echo 'Ubuntu'
             ;;
