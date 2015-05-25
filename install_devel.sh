@@ -103,7 +103,7 @@ function install_pyenv () {
             fi
             if [ ! -d $HOME/.pyenv ]; then
                 yellow_print "INFO: installing pyenv ..." 
-                cp -rf devel/pyenv $HOME/.pyenv
+                curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash 
             fi
             return_status=$?
             ;;
