@@ -10,9 +10,6 @@
 [submodule "vim: vim-easymotion"]
 	path = vim/.vim/bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
-[submodule "vim: vifm"]
-	path = vim/.vim/bundle/vifm
-	url = https://github.com/istib/vifm.vim.git
 [submodule "vim: vim-autocomplpop"]
 	path = vim/.vim/bundle/vim-autocomplpop
 	url = https://github.com/othree/vim-autocomplpop.git
@@ -34,10 +31,6 @@
 [submodule "vim: supertab"]
 	path = vim/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
-
-[submodule "env: oh-my-zsh"]
-	path = env/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git 
 
 [submodule "devel: pyenv"]
     path = devel/pyenv
