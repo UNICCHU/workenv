@@ -4,7 +4,6 @@
 " ****************************************
 "
 "  **** key Mappings **** 
-" F2     : vifm
 " F3     : NERDTreeToggle
 " F4     : TagbarToggle
 " F5     : Compile and execute (c, python, sh)
@@ -124,7 +123,6 @@ let g:syntastic_check_on_open=1
 set t_Co=256
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='badwolf'
 " *----* "
 
 
