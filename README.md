@@ -4,7 +4,7 @@ workenv
 ackeack's work environment
 - vim: with several plugins and key binding.
 - env: Which contains zsh, screen.
-- devel: install devel packages, and pyenv.
+- devel: install devel packages
 
 How to install:
 ------
@@ -39,5 +39,3 @@ env
 devel
 -----
 * devel packages
-* pyenv
-* python 2.7 version

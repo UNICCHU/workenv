@@ -31,13 +31,6 @@
 [submodule "vim: supertab"]
 	path = vim/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
-
-[submodule "devel: pyenv"]
-    path = devel/pyenv
-    url = https://github.com/yyuu/pyenv.git
-
-
-
 [submodule "vim/.vim/bundle/tlib_vim"]
 	path = vim/.vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git

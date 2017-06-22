@@ -225,7 +225,5 @@ function install_python_module () {
 # Main Install Procedure
 detect_os
 check_procedure 'devel-packages' install_devel
-check_procedure 'pyenv' install_pyenv
-check_procedure 'python modules' install_python_module
 green_print "SYS: finish installing devel packages."
 
